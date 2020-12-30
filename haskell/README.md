@@ -11,10 +11,8 @@ mateusz.koteja@leocode.com
 
 ## Launch task
 
-For `Task1` in file `1.hs`
-
 `stack ghci`
-`> :l ./src/1.hs`
+
 `> Task1.main`
 
-
+for others just go with: `Task2.main`, `Task3.main`, ...
