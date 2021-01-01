@@ -12,7 +12,7 @@ let rec makeCombinationsWithLength length list =
           |> List.map (fun i -> List.append [first] i)
           |> List.append (makeCombinationsWithLength length rest)
 
-let makeTripples list = makeCombinationsWithLength 3 list
+let makeTriples list = makeCombinationsWithLength 3 list
 let makePairs list = makeCombinationsWithLength 2 list
 let findSolution combinations =
   combinations
@@ -27,7 +27,7 @@ let Part1 input =
 
 let Part2 input =
   input
-  |> makeTripples
+  |> makeTriples
   |> findSolution
 
 [<EntryPoint>]
