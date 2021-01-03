@@ -1,16 +1,16 @@
 let rec makeCombinationsWithLength length list =
   match length with
-    | 1 ->
-      list
-      |> List.map (fun i -> [i])
-    | _ ->
-      match list with
-        | [] -> []
-        | first::rest ->
-          rest
-          |> makeCombinationsWithLength (length - 1)
-          |> List.map (fun i -> List.append [first] i)
-          |> List.append (makeCombinationsWithLength length rest)
+  | 1 ->
+    list
+    |> List.map (fun i -> [i])
+  | _ ->
+    match list with
+    | [] -> []
+    | first::rest ->
+      rest
+      |> makeCombinationsWithLength (length - 1)
+      |> List.map (fun i -> List.append [first] i)
+      |> List.append (makeCombinationsWithLength length rest)
 
 let makeTriples list = makeCombinationsWithLength 3 list
 let makePairs list = makeCombinationsWithLength 2 list
