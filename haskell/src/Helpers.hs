@@ -3,9 +3,6 @@ module Helpers where
   toInt :: String -> Int
   toInt x = read x :: Int
 
-  toTuple :: [a] -> (a, a)
-  toTuple [x, y] = (x, y)
-
   countInString :: Char -> String -> Int
   countInString char = length . filter (== char)
 
