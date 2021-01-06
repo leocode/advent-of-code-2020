@@ -16,7 +16,7 @@ module Helpers where
     linesFromFile <- readLinesfromFile path
     return (map toInt linesFromFile)
   
-  charAt :: Int -> String -> Maybe Char
-  charAt _ [] = Nothing
-  charAt 0 (x:xs) = Just x
-  charAt pos (x:xs) = charAt (pos - 1) xs
+  at :: Int -> [a] -> Maybe a
+  at _ [] = Nothing
+  at 0 (x:xs) = Just x
+  at pos (x:xs) = at (pos - 1) xs

@@ -28,6 +28,7 @@ library
       Helpers
       Task1
       Task2
+      Task3
   other-modules:
       Paths_haskell
   hs-source-dirs:

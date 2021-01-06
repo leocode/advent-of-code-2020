@@ -1,6 +1,6 @@
 module Task2 where
 
-  import Helpers (readLinesfromFile, countInString, toInt, charAt)
+  import Helpers (readLinesfromFile, countInString, toInt, at)
 
   import qualified Text.Parsec as Parsec
   import Control.Monad.Identity (Identity)
@@ -33,8 +33,8 @@ module Task2 where
   newPolicy (pos1, pos2, expectedChar, password) =
     newPolicyChecker (Just expectedChar) char1 char2
     where
-      char1 = charAt (pos1 - 1) password
-      char2 = charAt (pos2 - 1) password
+      char1 = at (pos1 - 1) password
+      char2 = at (pos2 - 1) password
       newPolicyChecker :: Eq a => a -> a -> a -> Bool
       newPolicyChecker expectedChar x y = (expectedChar == x || expectedChar == y) && x /= y
 
