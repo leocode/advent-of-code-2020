@@ -16,14 +16,7 @@ module Helpers where
     linesFromFile <- readLinesfromFile path
     return (map toInt linesFromFile)
   
-  xor :: Bool -> Bool -> Bool
-  xor a b = a /= b
-
   charAt :: Int -> String -> Maybe Char
   charAt _ [] = Nothing
   charAt 0 (x:xs) = Just x
   charAt pos (x:xs) = charAt (pos - 1) xs
-
-  maybeToBool :: Maybe Char -> Bool
-  maybeToBool (Just _) = True
-  maybeToBool Nothing = False
