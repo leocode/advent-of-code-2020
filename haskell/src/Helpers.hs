@@ -3,9 +3,6 @@ module Helpers where
   toInt :: String -> Int
   toInt x = read x :: Int
 
-  toTuple :: [a] -> (a, a)
-  toTuple [x, y] = (x, y)
-
   countInString :: Char -> String -> Int
   countInString char = length . filter (== char)
 
@@ -19,3 +16,7 @@ module Helpers where
     linesFromFile <- readLinesfromFile path
     return (map toInt linesFromFile)
   
+  charAt :: Int -> String -> Maybe Char
+  charAt _ [] = Nothing
+  charAt 0 (x:xs) = Just x
+  charAt pos (x:xs) = charAt (pos - 1) xs
