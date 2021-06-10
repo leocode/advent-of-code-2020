@@ -9,7 +9,7 @@ module Task1 where
   solution :: Int -> [Int] -> [Int]
   solution tupleSize = map product . findSums 2020 . tuples tupleSize
 
-  main = do
+  run = do
     numbers <- readNumbersFromFile "./data/1.txt"
     print $ solution 2 numbers
     print $ solution 3 numbers

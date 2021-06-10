@@ -42,7 +42,7 @@ module Task2 where
   verifyResult _ (Left _) = False
   verifyResult policy (Right (min, max, char, password)) = policy (toInt min, toInt max, char, password)
       
-  main = do
+  run = do
     input <- readLinesfromFile "./data/2.txt"
     print $ (length . (filter (verifyResult oldPolicy) . map parseLine)) input
     print $ (length . (filter (verifyResult newPolicy) . map parseLine)) input

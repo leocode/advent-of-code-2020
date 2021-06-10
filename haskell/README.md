@@ -1,18 +1,18 @@
-# Advent of Code - Haskell
+# Advent of Code 2020 - Haskell
 
-## Authors
-
-mateusz.koteja@leocode.com
+Authors:
+1. Mateusz Koteja <mateusz.koteja@leocode.com>
 
 ## Requirements
 
-- haskell
-- stack
+1. GHC
+2. Cabal
 
-## Launch task
+## Install
 
-`stack ghci`
+1. `cabal install`
 
-`> Task1.main`
+## Run
 
-for others just go with: `Task2.main`, `Task3.main`, ...
+1. `cabal run`
+2. `Task1.run` or `Task2.run` or `Task3.run` or [...]

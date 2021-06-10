@@ -22,7 +22,7 @@ module Task3 where
   treesInPath :: String -> Int
   treesInPath = length . filter (== '#')
 
-  main = do
+  run = do
     input <- readLinesfromFile "./data/3.txt"
     print $ (treesInPath . getPath input) (3, 1)
     print $ product $ map (treesInPath . getPath input) [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
