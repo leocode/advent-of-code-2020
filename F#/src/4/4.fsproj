@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FParsec" Version="1.1.1" />
     <PackageReference Include="FSharpx.Extras" Version="3.0.0" />
   </ItemGroup>
 
