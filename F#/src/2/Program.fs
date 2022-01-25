@@ -1,4 +1,4 @@
-open System.Text.RegularExpressions
+open Common.ActivePatterns
 
 type PasswordScheme = {
   Char: char
@@ -13,18 +13,13 @@ type PasswordEntry = {
 
 type ValidationResult = Valid | Invalid
 
-let (|Regex|_|) pattern input =
-  let m = Regex.Match(input, pattern)
-  if m.Success then Some(List.tail [ for g in m.Groups -> g.Value ])
-  else None
-
 let ParseRawPassword line =
   match line with
-  | Regex @"(\d+)-(\d+) (.): (.*)" [min; max; char; password;] ->
+  | Regex @"(\d+)-(\d+) (.): (.*)" [Integer min; Integer max; char; password;] ->
     Some {
       Scheme = {
-        Min = int min;
-        Max = int max;
+        Min = min;
+        Max = max;
         Char = char.[0];
       };
       Password = password;
@@ -59,7 +54,7 @@ let OfficialTobogganCorporatePolicyValidator entry =
 let CountValidPasswords policyValidator passwords =
   passwords
     |> List.map (ParseRawPassword >> policyValidator)
-    |> List.filter (fun r -> Option.contains Valid r)
+    |> List.filter (Option.contains Valid)
     |> List.length
 
 [<EntryPoint>]

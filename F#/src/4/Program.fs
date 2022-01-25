@@ -1,12 +1,10 @@
 open System
 open System.Text.RegularExpressions
+
 open FSharpx
 open FSharpx.Option
 
-let (|Regex|_|) pattern input =
-  let m = Regex.Match(input, pattern)
-  if m.Success then Some(List.tail [ for g in m.Groups -> g.Value ])
-  else None
+open Common.ActivePatterns
 
 let isValidEyeColor str =
   ["amb"; "blu"; "brn"; "gry"; "grn"; "hzl"; "oth"] |> List.contains str

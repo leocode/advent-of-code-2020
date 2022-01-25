@@ -15,4 +15,8 @@
     <PackageReference Include="FSharpx.Extras" Version="3.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.fsproj" />
+  </ItemGroup>
+
 </Project>

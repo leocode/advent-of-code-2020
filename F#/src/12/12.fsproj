@@ -3,9 +3,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>_8</RootNamespace>
-    <RunWorkingDirectory>.</RunWorkingDirectory>
+    <RootNamespace>_12</RootNamespace>
     <WarnOn>3390;$(WarnOn)</WarnOn>
+    <RunWorkingDirectory>.</RunWorkingDirectory>
   </PropertyGroup>
 
   <ItemGroup>
